@@ -123,13 +123,13 @@ def basic_functions():
     # OPEN THE GIVEN CODE EDITOR
 
         elif 'open code editor' in query:
-            path = "C:\\Users\\Saransh\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            path = "C:\\Users\\user\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(path)
 
     # PLAY THE MUSIC IN GIVEN DIRECTORY
 
         elif 'play music' in query:
-            music_dir = 'C:\\Users\\Saransh\\Music'
+            music_dir = 'C:\\Users\\user\\Music'
             songs = os.listdir(music_dir)   
             try:                    
                 os.startfile(os.path.join(music_dir, songs[random.randint(len(songs))]))
