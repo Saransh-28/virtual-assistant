@@ -10,6 +10,7 @@ import os
 import smtplib
 import pywhatkit as kt
 import random
+import pyperclip
 
 #SETUP THE VOICE OF THE MACHINE 
 
@@ -60,8 +61,8 @@ def sendEmail(to,content):
     server = smtplib.SMTP('smtp.gmail.com' , 587)
     server.ehlo()
     server.starttls()
-    server.login('troymail1221@gmail.com' , 'troymail1221@#$$#@')
-    server.sendmail('troymail1221@gmail.com' , to , content)
+    server.login('email-id' , 'password')
+    server.sendmail('email-id' , to , content)
     server.close()
 
 # FUNCTION TO ADD EMAIL IN THE DICTIONARY
@@ -93,6 +94,12 @@ def basic_functions():
             results = wikipedia.summary(query,sentences = 3)
             speak("According to wikipedia")
             speak(results)
+
+    #  READ THE SELECTED TEXT (COPY THE TEXT TO THE CLIPBOARD)
+        
+        elif 'read the text' in query:
+            text = pyperclip.copy()
+            speak(str(text))
 
     # OPEN YOUTUBE IN THE DEFAULT BROWSER
 
